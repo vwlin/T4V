@@ -2,7 +2,7 @@
 This is the repository for [T4V: Exploring Neural Network Architectures that Improve the Scalability of Neural Network Verification](https://link.springer.com/chapter/10.1007/978-3-031-22337-2_28), which focuses on improving the scalability of NN verification through exploring which NN architectures lead to more scalable verification. In this paper, we propose a general framework for incorporating verification scalability in the training process by identifying NN properties that improve verification and incentivizing these properties through a verification loss. One natural application of our method is robustness verification, especially using tools based on interval analysis, which have shown great promise in recent years. Specifically, we show that we can greatly reduce the approximation error of interval analysis by forcing all (or most) NNs to have the same sign. Finally, we provide an extensive evaluation on the MNIST and CIFAR-10 datasets in order to illustrate the benefit of training for verification. This repository contains the code necesary to replicate our experiments.
 
 ## Prerequisites
-1. Clone the [https://github.com/KaidiXu/LiRPA_Verify](LiRPA_Verify) (aka Fast and Complete) repository into the `src` directory.
+1. Clone the [LiRPA_Verify](https://github.com/KaidiXu/LiRPA_Verify) (aka Fast and Complete) repository into the `src` directory.
 2. Follow the installation and setup instructions for LiRPA_Verify.
 3. Run our setup script.
    ```
@@ -108,3 +108,15 @@ and for Scenario 2, run
 python3 pgd_CNN.py --load [MODEL PATH] --seed [SEED] --eps [EPSILON] --asymmetric_l2 --alpha [ALPHA] --gamma 0.9 --interval_prop --interval_width 0.04 --beta [BETA]
 ```
 For each network, we use the same EPSILON for evaluating robustness as the one we use for verification. For the remaining hyperparameters, supply those that the network was trained with.
+
+## BibTeX Entry
+```
+@incollection{lin2022t4v,
+  title={T4V: Exploring Neural Network Architectures that Improve the Scalability of Neural Network Verification},
+  author={Lin, Vivian and Ivanov, Radoslav and Weimer, James and Sokolsky, Oleg and Lee, Insup},
+  booktitle={Principles of Systems Design: Essays Dedicated to Thomas A. Henzinger on the Occasion of His 60th Birthday},
+  pages={585--603},
+  year={2022},
+  publisher={Springer}
+}
+```
